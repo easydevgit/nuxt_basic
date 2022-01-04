@@ -1,0 +1,4 @@
+<template>
+d
+   <nuxt />
+</template>

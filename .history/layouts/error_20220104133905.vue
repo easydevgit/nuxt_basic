@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <div id="error">
+            <div class="error_status">{{error.statusCode}}</div>
+            <div class="error_status">{{error.statusCode}}</div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    props: ['error']
+}
+</script>
