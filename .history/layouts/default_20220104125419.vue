@@ -1,4 +1,0 @@
-<template>
-d
-   <nuxt />
-</template>
