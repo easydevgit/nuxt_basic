@@ -9,10 +9,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.id.value">
-            <td>{{user.name.first}} {{user.name.last}}</td>
-            <td>{{user.location.city}}</td>
-            <td> {{user.nat}}</td>
+        <tr
+          v-for="user in users"
+          :key="user.id.value"
+        >
+          <td>{{user.name.first}} {{user.name.last}}</td>
+          <td>{{user.location.city}}</td>
+          <td> {{user.nat}}</td>
         </tr>
       </tbody>
     </table>
@@ -20,20 +23,13 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "IndexPage",
-  data() {
+  async asyncData({ $axios }) {
+    const users = await $axios.$get("https://randomuser.me/api/?results=10");
     return {
-      users: [],
+      users: users.results,
     };
-  },
-  mounted() {
-    axios
-      .get("https://randomuser.me/api/?results=10")
-      .then((response) => (this.users = response.data.results))
-      .catch((error) => console.log(error));
   },
 };
 </script>
