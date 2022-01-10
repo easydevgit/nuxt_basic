@@ -25,11 +25,13 @@
 <script>
 export default {
   name: "IndexPage",
-  async asyncData({ $axios }) {
-    const users = await $axios.$get("https://randomuser.me/api/?results=10");
-    return {
-      users: users.results,
-    };
+  async fetch({ store }) {
+    await store.dispatch("users/fetchUsers");
+  },
+  computed: {
+    users() {
+      return this.$store.getters["users/getUsers"];
+    },
   },
 };
 </script>
