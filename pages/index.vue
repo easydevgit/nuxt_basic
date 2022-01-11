@@ -25,12 +25,9 @@
 <script>
 export default {
   name: "IndexPage",
-  async fetch({ store }) {
-    await store.dispatch("users/fetchUsers");
-  },
   computed: {
     users() {
-      return this.$store.getters["users/getUsers"];
+      return this.$store.getters["getUsers"];
     },
   },
 };
