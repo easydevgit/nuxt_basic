@@ -2,4 +2,4 @@
     <div>
         I am Bob
     </div>
-</templatIe>
+</template>
