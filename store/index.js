@@ -1,6 +1,7 @@
 export const state = () => ({
   siteName: 'The best Company',
-  users: []
+  users: [],
+  auth: false
 })
 
 export const mutations = {
